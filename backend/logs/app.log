@@ -1,0 +1,249 @@
+2025-05-24T03:04:59.060Z [INFO]: Server running on port undefined
+2025-05-24T03:04:59.062Z [INFO]: Starting news scheduler
+2025-05-24T03:04:59.083Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:04:59.083Z [INFO]: News aggregation system initialized
+2025-05-24T03:06:27.036Z [INFO]: Server running on port undefined
+2025-05-24T03:06:27.038Z [INFO]: Starting news scheduler
+2025-05-24T03:06:27.057Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:06:27.057Z [INFO]: News aggregation system initialized
+2025-05-24T03:10:54.826Z [INFO]: Server running on port undefined
+2025-05-24T03:10:54.829Z [INFO]: Starting news scheduler
+2025-05-24T03:10:54.848Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:10:54.849Z [INFO]: News aggregation system initialized
+2025-05-24T03:11:03.011Z [INFO]: Server running on port undefined
+2025-05-24T03:11:03.015Z [INFO]: Starting news scheduler
+2025-05-24T03:11:03.035Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:11:03.035Z [INFO]: News aggregation system initialized
+2025-05-24T03:12:53.950Z [INFO]: Server running on port undefined
+2025-05-24T03:12:53.953Z [INFO]: Starting news scheduler
+2025-05-24T03:12:53.971Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:12:53.972Z [INFO]: News aggregation system initialized
+2025-05-24T03:13:52.797Z [INFO]: Server running on port undefined
+2025-05-24T03:13:52.800Z [INFO]: Starting news scheduler
+2025-05-24T03:13:52.819Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:13:52.820Z [INFO]: News aggregation system initialized
+2025-05-24T03:46:02.356Z [INFO]: Server running on port undefined
+2025-05-24T03:46:02.359Z [INFO]: Starting news scheduler
+2025-05-24T03:46:02.381Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:46:02.381Z [INFO]: News aggregation system initialized
+2025-05-24T03:51:52.835Z [INFO]: Server running on port undefined
+2025-05-24T03:51:52.838Z [INFO]: Starting news scheduler
+2025-05-24T03:51:52.858Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T03:51:52.858Z [INFO]: News aggregation system initialized
+2025-05-24T05:19:03.857Z [INFO]: Server running on port undefined
+2025-05-24T05:19:03.859Z [INFO]: Starting news scheduler
+2025-05-24T05:19:03.967Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T05:19:03.968Z [INFO]: News aggregation system initialized
+2025-05-24T05:19:16.410Z [INFO]: Server running on port undefined
+2025-05-24T05:19:16.412Z [INFO]: Starting news scheduler
+2025-05-24T05:19:16.433Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T05:19:16.433Z [INFO]: News aggregation system initialized
+2025-05-24T07:49:54.263Z [INFO]: Server running on port undefined
+2025-05-24T07:49:54.266Z [INFO]: Starting news scheduler
+2025-05-24T07:49:54.305Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T07:49:54.306Z [INFO]: News aggregation system initialized
+2025-05-24T07:50:01.802Z [INFO]: Server running on port undefined
+2025-05-24T07:50:01.805Z [INFO]: Starting news scheduler
+2025-05-24T07:50:01.827Z [INFO]: News scraping scheduled for: 0 6 * * *
+2025-05-24T07:50:01.827Z [INFO]: News aggregation system initialized
+2025-05-25T00:45:52.717Z [INFO]: This is an info message
+2025-05-25T00:45:52.733Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\testWorker.js:106:12)
+2025-05-25T00:46:53.802Z [INFO]: This is an info message
+2025-05-25T00:46:53.814Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T00:58:22.051Z [INFO]: This is an info message
+2025-05-25T00:58:22.064Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T00:59:02.412Z [INFO]: This is an info message
+2025-05-25T00:59:02.423Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T01:04:27.242Z [INFO]: This is an info message
+2025-05-25T01:04:27.250Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T01:13:19.195Z [INFO]: This is an info message
+2025-05-25T01:13:19.203Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T01:34:42.529Z [INFO]: This is an info message
+2025-05-25T01:34:42.537Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T01:45:02.617Z [INFO]: This is an info message
+2025-05-25T01:45:02.625Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T02:32:25.147Z [INFO]: This is an info message
+2025-05-25T02:32:25.162Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:31:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\testWorker.js:106:12)
+2025-05-25T02:54:57.695Z [INFO]: This is an info message
+2025-05-25T02:54:57.706Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:16:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\testWorker.js:106:12)
+2025-05-25T02:58:47.339Z [INFO]: This is an info message
+2025-05-25T02:58:47.358Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:16:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T03:01:10.705Z [INFO]: This is an info message
+2025-05-25T03:01:10.718Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:16:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
+2025-05-25T03:07:31.514Z [INFO]: This is an info message
+2025-05-25T03:07:31.527Z [ERROR]: Error: Test error
+    at Object.<anonymous> (C:\physical-security-news-aggregator\backend\__tests__\utils\logger.test.js:16:19)
+    at Promise.then.completed (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\physical-security-news-aggregator\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\physical-security-news-aggregator\backend\node_modules\jest-runner\build\runTest.js:444:34)
