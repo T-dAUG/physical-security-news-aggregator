@@ -1,0 +1,75 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Test Backend
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Backend Dependencies
+      working-directory: ./backend
+      run: npm ci
+      
+    - name: Run Backend Tests
+      working-directory: ./backend
+      run: npm test
+      
+    # Test Frontend
+    - name: Install Frontend Dependencies
+      working-directory: ./frontend
+      run: npm ci
+      
+    - name: Build Frontend
+      working-directory: ./frontend
+      run: npm run build
+      
+    - name: Run Frontend Tests (if any)
+      working-directory: ./frontend
+      run: npm test --passWithNoTests
+
+  verify-deployment:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Wait for Railway Auto-Deploy
+      run: sleep 90
+      
+    - name: Health Check Backend
+      run: |
+        echo "Testing backend health..."
+        curl -f https://backend-production-416d.up.railway.app/health || exit 1
+        echo "✅ Backend health check passed"
+        
+    - name: Test Articles API
+      run: |
+        echo "Testing articles API..."
+        response=$(curl -s https://backend-production-416d.up.railway.app/api/articles)
+        echo $response | grep -q "Sample Security Article" || exit 1
+        echo "✅ Articles API test passed"
+        
+    - name: Test Frontend
+      run: |
+        echo "Testing frontend..."
+        curl -f https://frontend-production-416d.up.railway.app || exit 1
+        echo "✅ Frontend test passed"
+        
+    - name: Send Success Notification
+      run: |
+        echo "🎉 Deployment successful!"
+        echo "Backend: https://backend-production-416d.up.railway.app"
+        echo "Frontend: https://frontend-production-416d.up.railway.app"
