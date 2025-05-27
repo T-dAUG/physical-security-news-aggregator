@@ -46,7 +46,7 @@ describe('ContentService Unit Tests', () => {
 
     mockConfig = {
       apify: { token: 'mock-apify-token' },
-      openai: { apiKey: 'mock-openai-key' },
+      openai: { apiKey: 'test-key-safe' },
       scraping: {
         sources: [
           { name: 'Source1', url: 'http://source1.com', selector: '.article-item' },
