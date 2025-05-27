@@ -1,28 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import apiClient from './services/api';
 
 function App() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Test API connection
-    fetch('/api/articles')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setArticles(data.articles || []);
-        setLoading(false);
-      })
-      .catch(error => {
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
+// ... then update the useEffect:
+useEffect(() => {
+  // Test API connection
+  apiClient.get('/articles')
+    .then(response => {
+      setArticles(response.data.articles || []);
+      setLoading(false);
+    })
+    .catch(error => {
+      setError(error.message);
+      setLoading(false);
+    });
+}, []);
 
   return (
     <div className="App">
