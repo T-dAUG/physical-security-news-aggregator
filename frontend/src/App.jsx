@@ -1,23 +1,34 @@
-import apiClient from './services/api';
+import React, { useState, useEffect } from 'react'
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://backend-production-416d.up.railway.app';
 
 function App() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-// ... then update the useEffect:
-useEffect(() => {
-  // Test API connection
-  apiClient.get('/articles')
-    .then(response => {
-      setArticles(response.data.articles || []);
-      setLoading(false);
-    })
-    .catch(error => {
-      setError(error.message);
-      setLoading(false);
-    });
-}, []);
+  useEffect(() => {
+    // Test API connection
+    console.log('Using API URL:', API_BASE_URL);
+    fetch(`${API_BASE_URL}/api/articles`)
+      .then(response => {
+        console.log('Response:', response);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data received:', data);
+        setArticles(data.articles || []);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('API Error:', error);
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -43,7 +54,7 @@ useEffect(() => {
         {!loading && !error && (
           <div className="articles-section">
             <h2>Latest Articles ({articles.length})</h2>
-            
+
             {articles.length === 0 ? (
               <div className="no-articles">
                 <p>No articles available yet.</p>
