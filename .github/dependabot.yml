@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "your-username"
+    
+  - package-ecosystem: "npm" 
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "your-username"
+      
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
