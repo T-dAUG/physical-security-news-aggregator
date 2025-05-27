@@ -28,7 +28,6 @@
     "jest": "^29.5.0",
     "nodemon": "^3.0.1"
   },
-
   "keywords": [
     "news",
     "aggregator",
