@@ -1,0 +1,51 @@
+# .github/workflows/deploy.yml
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Test Backend
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Backend Dependencies
+      working-directory: ./backend
+      run: npm ci
+      
+    - name: Run Backend Tests
+      working-directory: ./backend
+      run: npm test
+
+  verify-deployment:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Wait for Railway Deployment
+      run: sleep 60
+      
+    - name: Health Check Backend
+      run: |
+        curl -f https://backend-production-416d.up.railway.app/health || exit 1
+        
+    - name: Test API Endpoint
+      run: |
+        response=$(curl -s https://backend-production-416d.up.railway.app/api/articles)
+        echo $response | jq '.articles[0].title' || exit 1
+        
+    - name: Check Frontend
+      run: |
+        curl -f https://frontend-production-416d.up.railway.app || exit 1
