@@ -8,8 +8,12 @@ export default defineConfig({
     port: 8080
   },
   preview: {
-    host: '0.0.0.0',
+    host: '0.0.0.0', 
     port: 8080,
-    allowedHosts: 'all'
+    allowedHosts: [
+      'frontend-production-416d.up.railway.app',
+      'localhost',
+      '0.0.0.0'
+    ]
   }
 })
