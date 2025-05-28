@@ -1,17 +1,17 @@
-# Use Node.js 18 alpine for smaller image size
+# Dockerfile - Project Root (for backend deployment)
 FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files first (for better Docker layer caching)
-COPY package*.json ./
+# Copy backend package files first (for better Docker layer caching)
+COPY backend/package*.json ./
 
 # Install dependencies
 RUN npm ci --only=production
 
-# Copy application source code
-COPY . .
+# Copy backend source code
+COPY backend/ ./
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs
@@ -28,5 +28,5 @@ EXPOSE 4000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD node healthcheck.js || exit 1
 
-# Use npm start instead of direct node command
+# Use npm start
 CMD ["npm", "start"]
