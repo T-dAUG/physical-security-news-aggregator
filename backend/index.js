@@ -51,7 +51,6 @@ app.get('/api/articles', (req, res) => {
 // const scheduler = require('./src/tasks/scheduler');
 
 // Add scheduler status endpoint
-/*
 app.get('/scheduler/status', (req, res) => {
   try {
     const status = scheduler.getStatus();
@@ -83,7 +82,6 @@ app.post('/scheduler/trigger/:jobName', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
-*/
 
 // Start server
 const server = app.listen(PORT, '0.0.0.0', async () => {
@@ -109,7 +107,6 @@ const server = app.listen(PORT, '0.0.0.0', async () => {
 });
 
 // Graceful shutdown handling
-/*
 process.on('SIGTERM', async () => {
   console.log('SIGTERM received, shutting down gracefully');
   
@@ -124,7 +121,6 @@ process.on('SIGTERM', async () => {
     process.exit(1);
   }
 });
-*/
 
 app.server = server;
 module.exports = app;
