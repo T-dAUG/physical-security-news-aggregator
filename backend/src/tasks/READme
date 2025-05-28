@@ -1,0 +1,172 @@
+# Railway Scheduler Configuration Guide
+
+## 🚀 Production Deployment Strategy
+
+### Option A: Dedicated Scheduler Service (Recommended)
+
+Create **two separate Railway services**:
+
+1. **Main API Service** - Handles HTTP requests
+2. **Scheduler Service** - Handles background jobs
+
+#### Main API Service Environment Variables:
+```env
+NODE_ENV=production
+ENABLE_SCHEDULER=false
+PORT=$PORT
+# ... other API variables
+```
+
+#### Scheduler Service Environment Variables:
+```env
+NODE_ENV=production
+ENABLE_SCHEDULER=true
+SCHEDULER_INSTANCE=true
+CRON_DAILY_SCRAPE=0 6 * * *
+CRON_CLEANUP=0 2 * * 0
+CRON_CACHE_CLEANUP=0 * * * *
+SCHEDULER_TIMEZONE=UTC
+ARTICLE_RETENTION_DAYS=90
+SCRAPE_MAX_PAGES=10
+ALERT_WEBHOOK_URL=https://your-webhook-url.com
+# ... shared database/service variables
+```
+
+### Option B: Single Service with Replica Control
+
+If you want to keep everything in one service:
+
+#### Environment Variables:
+```env
+NODE_ENV=production
+ENABLE_SCHEDULER=true
+PORT=$PORT
+# Scheduler will only run on replica 0
+# ... other variables
+```
+
+### Option C: Development Setup
+
+#### Environment Variables:
+```env
+NODE_ENV=development
+ENABLE_SCHEDULER=true
+CRON_DAILY_SCRAPE=*/2 * * * *  # Every 2 minutes for testing
+CRON_CLEANUP=*/5 * * * *       # Every 5 minutes for testing
+CRON_CACHE_CLEANUP=* * * * *   # Every minute for testing
+```
+
+## 🔧 Configuration Options
+
+### Core Scheduler Control
+- `ENABLE_SCHEDULER` - `true/false` - Explicitly enable/disable scheduler
+- `SCHEDULER_INSTANCE` - `true/false` - Mark as dedicated scheduler instance
+- `NODE_ENV` - `development/production` - Environment mode
+
+### Cron Schedules
+- `CRON_DAILY_SCRAPE` - Default: `0 6 * * *` (6 AM daily)
+- `CRON_CLEANUP` - Default: `0 2 * * 0` (2 AM Sundays)
+- `CRON_CACHE_CLEANUP` - Default: `0 * * * *` (Every hour)
+- `SCHEDULER_TIMEZONE` - Default: `UTC`
+
+### Job Configuration
+- `ARTICLE_RETENTION_DAYS` - Default: `90` - How long to keep articles
+- `SCRAPE_MAX_PAGES` - Default: `10` - Max pages to scrape per source
+- `SCRAPING_SOURCES` - JSON string of custom sources (optional)
+
+### Alerting
+- `ALERT_WEBHOOK_URL` - Webhook for job failure alerts
+- `SLACK_WEBHOOK_URL` - Slack webhook for notifications
+- `ALERT_EMAIL_ENABLED` - `true/false` - Enable email alerts
+
+## 📝 Railway Deployment Steps
+
+### Step 1: Update Your Main Service
+
+1. Set `ENABLE_SCHEDULER=false` in Railway dashboard
+2. Deploy the updated scheduler code
+3. Verify API still works without scheduler
+
+### Step 2: Create Dedicated Scheduler Service (Recommended)
+
+1. **Create New Service:**
+   - Railway Dashboard → Add Service → GitHub Repo
+   - Select same repository
+   - Set **Root Directory** to `backend` (same as API)
+
+2. **Configure Scheduler Service:**
+   - Set all scheduler environment variables (see above)
+   - Set **Start Command** to `node -e "require('./scheduler').initialize()"`
+   - Or create a separate `scheduler-start.js` file
+
+3. **Test Scheduler Service:**
+   - Check logs for "Scheduler initialized successfully"
+   - Verify jobs are scheduled correctly
+
+### Step 3: Monitor and Verify
+
+- Check Railway logs for both services
+- Verify scheduler runs at expected times
+- Test manual job triggers via API endpoints
+
+## 🔍 Monitoring & Debugging
+
+### Health Check Endpoints
+
+Add these to your main API:
+
+```javascript
+// GET /scheduler/status
+app.get('/scheduler/status', (req, res) => {
+  res.json(scheduler.getStatus());
+});
+
+// POST /scheduler/trigger/:jobName
+app.post('/scheduler/trigger/:jobName', async (req, res) => {
+  try {
+    await scheduler.triggerJob(req.params.jobName);
+    res.json({ success: true, message: `Job ${req.params.jobName} triggered` });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+```
+
+### Log Monitoring
+
+Watch for these log messages:
+- ✅ `"Scheduler initialized successfully"`
+- ✅ `"Job completed successfully"`
+- ❌ `"Job failed"`
+- ❌ `"Scheduler disabled"`
+
+### Common Issues
+
+1. **Duplicate Jobs:** Multiple replicas running scheduler
+   - Solution: Use `ENABLE_SCHEDULER=false` on API, `true` on dedicated service
+
+2. **Jobs Not Running:** Scheduler disabled
+   - Check `ENABLE_SCHEDULER` environment variable
+   - Verify Railway replica logic
+
+3. **Job Failures:** Service dependencies not available
+   - Check all required services are deployed
+   - Verify database connections
+
+## 🎯 Best Practices
+
+1. **Separate Concerns:** Use dedicated scheduler service in production
+2. **Environment Control:** Use explicit environment variables
+3. **Monitoring:** Set up failure alerts and log monitoring  
+4. **Testing:** Use frequent schedules in development
+5. **Graceful Shutdown:** Handle SIGTERM/SIGINT properly
+6. **Error Handling:** Wrap all job logic in try-catch
+7. **Idempotency:** Make jobs safe to run multiple times
+
+## 🚨 Migration Steps
+
+1. Deploy new scheduler code
+2. Set `ENABLE_SCHEDULER=false` on current service
+3. Create dedicated scheduler service
+4. Test both services work independently
+5. Monitor for a few days to ensure stability

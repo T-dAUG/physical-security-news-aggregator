@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
   logger.error('Unhandled error:', err);
   res.status(500).json({ 
     error: 'Internal Server Error',
-    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
+    message: process.env.NODE_ENV === 'production' ? err.message : 'Something went wrong'
   });
 });
 
