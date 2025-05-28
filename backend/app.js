@@ -21,7 +21,7 @@ app.use(cors({
   origin: [
     'https://frontend-production-416d.up.railway.app',
     'http://localhost:5173',
-    'http://localhost:3000',
+    'http://localhost:4000',
     'http://localhost:8080'
   ],
   credentials: true,
