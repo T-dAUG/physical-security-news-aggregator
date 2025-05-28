@@ -7,11 +7,3 @@ healthcheckPath = "/health"
 healthcheckTimeout = 30
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
-
-[[services]]
-name = "backend"
-source = "backend/"
-
-[[services]]
-name = "frontend"
-source = "frontend/"
