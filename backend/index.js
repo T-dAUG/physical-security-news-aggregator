@@ -48,9 +48,10 @@ app.get('/api/articles', (req, res) => {
 });
 
 // Initialize scheduler
-const scheduler = require('./scheduler');
+// const scheduler = require('./src/tasks/scheduler');
 
 // Add scheduler status endpoint
+/*
 app.get('/scheduler/status', (req, res) => {
   try {
     const status = scheduler.getStatus();
@@ -82,6 +83,7 @@ app.post('/scheduler/trigger/:jobName', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+*/
 
 // Start server
 const server = app.listen(PORT, '0.0.0.0', async () => {
@@ -91,6 +93,7 @@ const server = app.listen(PORT, '0.0.0.0', async () => {
   console.log(`Articles API: http://localhost:${PORT}/api/articles`);
   
   // Initialize scheduler with smart environment detection
+  /*
   try {
     const schedulerStarted = await scheduler.initialize();
     if (schedulerStarted) {
@@ -102,9 +105,11 @@ const server = app.listen(PORT, '0.0.0.0', async () => {
     console.error('❌ Scheduler initialization failed:', error.message);
     // Don't crash the server if scheduler fails
   }
+  */
 });
 
 // Graceful shutdown handling
+/*
 process.on('SIGTERM', async () => {
   console.log('SIGTERM received, shutting down gracefully');
   
@@ -119,6 +124,7 @@ process.on('SIGTERM', async () => {
     process.exit(1);
   }
 });
+*/
 
 app.server = server;
 module.exports = app;
