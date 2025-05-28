@@ -34,6 +34,11 @@ app.get('/scheduler/status', (req, res) => {
   }
 });
 
+const PORT = process.env.PORT || 4000;  // Railway sets PORT automatically
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // Add manual job trigger endpoint (for admin/testing)
 app.post('/scheduler/trigger/:jobName', async (req, res) => {
   try {
