@@ -1,17 +1,45 @@
-# railway.toml - Deploy backend service only
+# Railway Custom Commands Configuration
 
-[build]
-builder = "DOCKERFILE"
-dockerfilePath = "backend/Dockerfile"
+# ============================================
+# CUSTOM BUILD COMMAND (recommended):
+# ============================================
+cd backend && npm ci --only=production
 
-[deploy]
-healthcheckPath = "/health"
-healthcheckTimeout = 300
-restartCommand = "npm start"
-workingDirectory = "backend"
+# Alternative build commands:
+# cd backend && npm install
+# cd backend && npm install && npm run build
+# cd backend && npm ci && npm prune --production
 
-# Alternative configuration if Dockerfile doesn't work
-# [build]
-# builder = "NIXPACKS" 
-# buildCommand = "cd backend && npm install"
-# startCommand = "cd backend && npm start"
+# ============================================
+# CUSTOM START COMMAND:
+# ============================================
+cd backend && npm start
+
+# Alternative start commands:
+# cd backend && node index.js
+# cd backend && npm run start
+
+# ============================================
+# COMPLETE RAILWAY SETTINGS:
+# ============================================
+
+# Branch: main
+# Root Directory: (leave empty when using custom commands)
+# Build Command: cd backend && npm ci --only=production  
+# Start Command: cd backend && npm start
+
+# ============================================
+# ENVIRONMENT VARIABLES:
+# ============================================
+NODE_ENV=production
+PORT=$PORT
+ENABLE_SCHEDULER=true
+FRONTEND_URL=https://your-frontend-url.railway.app
+
+# Scheduler settings
+CRON_DAILY_SCRAPE=0 6 * * *
+CRON_CLEANUP=0 2 * * 0
+CRON_CACHE_CLEANUP=0 * * * *
+SCHEDULER_TIMEZONE=UTC
+ARTICLE_RETENTION_DAYS=90
+SCRAPE_MAX_PAGES=10
