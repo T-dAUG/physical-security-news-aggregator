@@ -1,0 +1,17 @@
+# railway.toml - Deploy backend service only
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "backend/Dockerfile"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartCommand = "npm start"
+workingDirectory = "backend"
+
+# Alternative configuration if Dockerfile doesn't work
+# [build]
+# builder = "NIXPACKS" 
+# buildCommand = "cd backend && npm install"
+# startCommand = "cd backend && npm start"
