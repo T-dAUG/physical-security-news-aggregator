@@ -9,12 +9,20 @@ const PORT = process.env.PORT || 4000;
 
 // Security middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173', 
+    'https://frontend-production-416d.up.railway.app',
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
+  credentials: true
+}));
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100
 });
 app.use(limiter);
 
@@ -47,84 +55,12 @@ app.get('/api/articles', (req, res) => {
   });
 });
 
-// Initialize scheduler
-// const scheduler = require('./src/tasks/scheduler');
-
-// Add scheduler status endpoint
-/*
-app.get('/scheduler/status', (req, res) => {
-  try {
-    const status = scheduler.getStatus();
-    res.json(status);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to get scheduler status' });
-  }
-});
-
-// Add manual job trigger endpoint (for admin/testing)
-app.post('/scheduler/trigger/:jobName', async (req, res) => {
-  try {
-    const { jobName } = req.params;
-    const validJobs = ['dailyScrape', 'cleanup', 'cacheCleanup'];
-    
-    if (!validJobs.includes(jobName)) {
-      return res.status(400).json({ 
-        error: 'Invalid job name', 
-        validJobs 
-      });
-    }
-
-    await scheduler.triggerJob(jobName);
-    res.json({ 
-      success: true, 
-      message: `Job ${jobName} triggered successfully` 
-    });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
-*/
-
 // Start server
-const server = app.listen(PORT, '0.0.0.0', async () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log('Backend API is ready!');
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`Articles API: http://localhost:${PORT}/api/articles`);
-  
-  // Initialize scheduler with smart environment detection
-  /*
-  try {
-    const schedulerStarted = await scheduler.initialize();
-    if (schedulerStarted) {
-      console.log('✅ Scheduler initialized successfully');
-    } else {
-      console.log('ℹ️ Scheduler disabled for this instance');
-    }
-  } catch (error) {
-    console.error('❌ Scheduler initialization failed:', error.message);
-    // Don't crash the server if scheduler fails
-  }
-  */
 });
 
-// Graceful shutdown handling
-/*
-process.on('SIGTERM', async () => {
-  console.log('SIGTERM received, shutting down gracefully');
-  
-  try {
-    await scheduler.shutdown();
-    server.close(() => {
-      console.log('Server closed');
-      process.exit(0);
-    });
-  } catch (error) {
-    console.error('Error during shutdown:', error);
-    process.exit(1);
-  }
-});
-*/
-
-app.server = server;
 module.exports = app;
