@@ -1,28 +1,54 @@
-// Add this to your index.js after your existing server setup
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+require('dotenv').config();
 
-// Initialize scheduler (smart environment detection)
-const scheduler = require('./scheduler');
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-// Initialize scheduler after server starts
-const server = app.listen(PORT, '0.0.0.0', async () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log('Backend API is ready!');
-  console.log(`Health check: http://localhost:${PORT}/health`);
-  console.log(`Articles API: http://localhost:${PORT}/api/articles`);
-  
-  // Initialize scheduler with smart environment detection
-  try {
-    const schedulerStarted = await scheduler.initialize();
-    if (schedulerStarted) {
-      console.log('✅ Scheduler initialized successfully');
-    } else {
-      console.log('ℹ️ Scheduler disabled for this instance');
-    }
-  } catch (error) {
-    console.error('❌ Scheduler initialization failed:', error.message);
-    // Don't crash the server if scheduler fails
-  }
+// Security middleware
+app.use(helmet());
+app.use(cors());
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
 });
+app.use(limiter);
+
+// Body parser
+app.use(express.json());
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'OK', 
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime()
+    });
+});
+
+// Default route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Physical Security News Aggregator API',
+    status: 'running',
+    version: '1.0.0'
+  });
+});
+
+// Articles API endpoint
+app.get('/api/articles', (req, res) => {
+  res.json({
+    message: 'Articles endpoint',
+    articles: []
+  });
+});
+
+// Initialize scheduler
+const scheduler = require('./scheduler');
 
 // Add scheduler status endpoint
 app.get('/scheduler/status', (req, res) => {
@@ -32,11 +58,6 @@ app.get('/scheduler/status', (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to get scheduler status' });
   }
-});
-
-const PORT = process.env.PORT || 4000;  // Railway sets PORT automatically
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
 });
 
 // Add manual job trigger endpoint (for admin/testing)
@@ -59,6 +80,27 @@ app.post('/scheduler/trigger/:jobName', async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
+  }
+});
+
+// Start server
+const server = app.listen(PORT, '0.0.0.0', async () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log('Backend API is ready!');
+  console.log(`Health check: http://localhost:${PORT}/health`);
+  console.log(`Articles API: http://localhost:${PORT}/api/articles`);
+  
+  // Initialize scheduler with smart environment detection
+  try {
+    const schedulerStarted = await scheduler.initialize();
+    if (schedulerStarted) {
+      console.log('✅ Scheduler initialized successfully');
+    } else {
+      console.log('ℹ️ Scheduler disabled for this instance');
+    }
+  } catch (error) {
+    console.error('❌ Scheduler initialization failed:', error.message);
+    // Don't crash the server if scheduler fails
   }
 });
 
