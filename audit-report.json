@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-05-27T16:46:20.639Z",
+  "summary": {
+    "security": 0,
+    "dependencies": 2,
+    "redundancies": 3,
+    "inconsistencies": 0
+  },
+  "details": {
+    "security": [],
+    "dependencies": [
+      {
+        "project": "backend",
+        "type": "Outdated Dependencies",
+        "items": [
+          "express",
+          "express-rate-limit",
+          "helmet",
+          "node-cron",
+          "redis"
+        ]
+      },
+      {
+        "project": "frontend",
+        "type": "Outdated Dependencies",
+        "items": [
+          "@types/react",
+          "@types/react-dom",
+          "eslint",
+          "eslint-plugin-react-hooks",
+          "react",
+          "react-dom",
+          "react-router-dom",
+          "tailwindcss"
+        ]
+      }
+    ],
+    "redundancies": [
+      {
+        "project": "backend",
+        "type": "Unused Dependencies",
+        "items": [
+          "cheerio",
+          "cross-spawn",
+          "date-fns",
+          "dotenv",
+          "winston"
+        ]
+      },
+      {
+        "project": "frontend",
+        "type": "Unused Dependencies",
+        "items": [
+          "@tanstack/react-query-devtools",
+          "lucide-react",
+          "react-dom",
+          "react-router-dom",
+          "@types/react",
+          "@types/react-dom",
+          "autoprefixer",
+          "postcss",
+          "tailwindcss"
+        ]
+      },
+      {
+        "category": "GitHub Actions",
+        "type": "Multiple Workflow Files",
+        "items": [
+          "codeql-analysis.yml",
+          "deploy.yml",
+          "security.yml"
+        ]
+      }
+    ],
+    "inconsistencies": [],
+    "recommendations": [
+      "📦 Update 8 outdated packages in frontend",
+      "🧹 Remove 5 unused dependencies from backend",
+      "🧹 Remove 9 unused dependencies from frontend"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-05-27T16:30:20.528Z",
+  "repository": {
+    "remoteUrl": "https://github.com/t-dAUG/physical-security-news-aggregator.git",
+    "owner": "t-dAUG",
+    "name": "physical-security-news-aggregator",
+    "currentBranch": "main",
+    "lastCommit": "4895d18 - 📚 Add essential documentation and security scanning (69 seconds ago)"
+  },
+  "issues": [
+    "Missing CodeQL scanning: .github/workflows/codeql-analysis.yml",
+    "Potential api key references found in code",
+    "Potential password references found in code",
+    "Potential secret references found in code",
+    "Potential token references found in code",
+    "Potential potential api keys found in code"
+  ],
+  "recommendations": [
+    "🔒 Review code for hardcoded secrets - use environment variables",
+    "📚 Enhance README with installation, usage, and deployment instructions"
+  ],
+  "summary": {
+    "totalIssues": 6,
+    "totalRecommendations": 2
+  }
+}
