@@ -1,7 +1,7 @@
 // scripts/monitor.js - Run this periodically or in CI
 const axios = require('axios');
 
-const BACKEND_URL = 'https://backend-production-416d.up.railway.app';
+const BACKEND_URL = 'https://backend-production-619d.up.railway.app';
 const FRONTEND_URL = 'https://frontend-production-416d.up.railway.app';
 
 async function checkHealth() {

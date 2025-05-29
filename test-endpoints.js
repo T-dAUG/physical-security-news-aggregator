@@ -4,7 +4,7 @@ const https = require('https');
 // Disable SSL verification for testing
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-const BACKEND_URL = 'https://backend-production-416d.up.railway.app';
+const BACKEND_URL = 'https://backend-production-619d.up.railway.app';
 const FRONTEND_URL = 'https://frontend-production-416d.up.railway.app';
 
 async function testEndpoint(url, description) {

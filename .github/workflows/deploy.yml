@@ -17,7 +17,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '24'
         
     - name: Install Backend Dependencies
       working-directory: ./backend
@@ -52,13 +52,13 @@ jobs:
     - name: Health Check Backend
       run: |
         echo "Testing backend health..."
-        curl -f https://backend-production-416d.up.railway.app/health || exit 1
+        curl -f https://backend-production-619d.up.railway.app/health || exit 1
         echo "✅ Backend health check passed"
         
     - name: Test Articles API
       run: |
         echo "Testing articles API..."
-        response=$(curl -s https://backend-production-416d.up.railway.app/api/articles)
+        response=$(curl -s https://backend-production-619d.up.railway.app/api/articles)
         echo $response | grep -q "Sample Security Article" || exit 1
         echo "✅ Articles API test passed"
         
