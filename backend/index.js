@@ -4,6 +4,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
+app.use('/api', require('./routes/scrape'));
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 

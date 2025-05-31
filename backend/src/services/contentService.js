@@ -3,6 +3,8 @@ const logger = require('../utils/logger');
 const openaiService = require('./openaiService');
 const airtableService = require('./airtableService');
 const { validateArticle } = require('../utils/validators');
+const OpenAI = require('openai');
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 class ContentService {
   constructor() {
