@@ -28,3 +28,5 @@ function ManualScrapeButton({ apiUrl }) {
     </div>
   );
 }
+
+export default ManualScrapeButton;
