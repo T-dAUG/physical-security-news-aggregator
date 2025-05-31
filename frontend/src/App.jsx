@@ -1,3 +1,4 @@
+import ManualScrapeButton from './components/ManualScrapeButton';
 import React, { useState, useEffect } from 'react'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://backend-production-619d.up.railway.app';
@@ -38,6 +39,7 @@ function App() {
       </header>
 
       <main className="main-content">
+      <ManualScrapeButton apiUrl={API_BASE_URL} />
         {loading && (
           <div className="loading">
             <p>Loading articles...</p>
