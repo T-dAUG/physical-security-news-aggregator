@@ -1,3 +1,4 @@
+const scrapeRouter = require('./src/routes/scrape');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -56,7 +57,7 @@ app.get('/api/articles', (req, res) => {
 });
 
 // API routes (after middleware)
-app.use('/api', require('./routes/scrape'));
+app.use('/api', require('./src/routes/scrape'));
 
 // Start server
 const server = app.listen(PORT, '0.0.0.0', () => {
